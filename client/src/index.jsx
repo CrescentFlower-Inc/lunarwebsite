@@ -2,6 +2,8 @@
 import { render } from 'solid-js/web';
 
 import './index.css';
+import styles from './components/Shared/App.module.css';
+import Navbar from "./components/Shared/Navbar";
 import Home from './components/Home/Home';
 import Test from './components/Test/Test';
 
@@ -18,10 +20,13 @@ if (import.meta.env.DEV && !(root instanceof HTMLElement)) {
 render(
 	() => (
 		<Router>
-			<Routes>
-				<Route path="/" component={Home} />
-				<Route path="/duck" component={Test} />
-			</Routes>
+			<div class={styles.App}>
+				<Navbar/>
+				<Routes>
+					<Route path="/" component={Home} />
+					<Route path="/duck" component={Test} />
+				</Routes>
+			</div>
 		</Router>
 	),
 	root

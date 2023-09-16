@@ -1,15 +1,12 @@
+import { A } from "@solidjs/router";
 import styles from "./Navbar.module.css";
 
 function NavbarElement(props) {
-	let style = styles.NavbarElement
-	let url = new URL(window.location.href)
-
-	if (url.pathname == props.path) { style = styles.NavbarElementSelected }
-
 	return (
-		<span class={style}>
-			<a href={props.path}> {props.name}</a>
-		</span>
+		<A class={styles.NavbarElement}
+			activeClass={styles.NavbarElementSelected}
+			href={props.path}
+			end={true}>{props.name}</A>
 	);
 }
 
