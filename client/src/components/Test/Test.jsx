@@ -6,6 +6,8 @@ function Test() {
 	<div class={styles.App}>
 		<Navbar />
 		<h2>i quack...</h2>
+		<p style="height:300vh">balls</p>
+		<p>too much balls</p>
  	</div>
   );
 }
