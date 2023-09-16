@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "lunarwebsite"
+version = "0.1.0"
+description = "The backend to the lunarian website"
+authors = ["BadPythonCoder <xsare435@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.103.1"
+uvicorn = {extras = ["standard"], version = "^0.23.2"}
+
+#[tool.poetry.scripts]
+#dev = "uvicorn lunarwebsite.__init__:app --reload"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

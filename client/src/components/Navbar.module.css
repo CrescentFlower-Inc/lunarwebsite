@@ -1,0 +1,31 @@
+.Navbar {
+	position: absolute;
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+.NavbarElement {	
+	display: inline-block;
+	padding-right: 18px;
+	padding-left: 18px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	background-color: #00359F;
+	float: left;
+}
+
+.NavbarElementBuffer {
+	display: inline-block;
+	padding-bottom: 9px;
+	padding-left: 18px;
+	padding-right: 18px;
+	padding-top: 9px;
+	background-color: #00359F;
+}
+
+.NavbarElement:hover {
+	background-color: #009F35;
+}
+
+
