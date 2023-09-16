@@ -1,22 +1,20 @@
 .Navbar {
-	position: absolute;
-	list-style-type: none;
+	position: sticky;
+	top: 0;
+	left: 0;
 	padding: 0px;
 	margin: 0px;
+	display: flex;
 }
 
-.NavbarElement {	
-	display: inline-block;
-	padding-right: 18px;
-	padding-left: 18px;
-	padding-top: 9px;
-	padding-bottom: 9px;
+.NavbarSpace {
+	display: block;
+	flex-grow: 1;
 	background-color: #00359F;
-	float: left;
 }
 
-.NavbarElementBuffer {
-	display: inline-block;
+.NavbarElement, .NavbarElementBuffer {
+	display: block;
 	padding-bottom: 9px;
 	padding-left: 18px;
 	padding-right: 18px;

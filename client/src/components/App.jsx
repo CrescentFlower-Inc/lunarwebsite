@@ -4,9 +4,9 @@ import Navbar from "./Navbar";
 function App() {
   return (
 	<div class={styles.App}>
-		<Navbar /><br />
+		<Navbar />
 		<h2>Welcome to The Lunarian Federation</h2>
-	</div>
+ 	</div>
   );
 }
 

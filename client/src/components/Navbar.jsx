@@ -16,11 +16,16 @@ function NavbarElement(props) {
 	);
 }
 
+function NavbarSpace(props) {
+	return <span class={styles.NavbarSpace}></span>
+}
+
 function Navbar() {
 	return (
 		<div class={styles.Navbar}>
 			<NavbarElement name="test" />
 			<NavbarElement name="penis" />
+			<NavbarSpace />
 			<NavbarElement buffer="true" />
 		</div>
 	);
