@@ -14,7 +14,7 @@
 	background-color: #00359F;
 }
 
-.NavbarElement, .NavbarElementBuffer {
+.NavbarElement {
 	display: block;
 	padding-bottom: 9px;
 	padding-left: 18px;
