@@ -3,6 +3,8 @@ import { render } from 'solid-js/web';
 
 import './index.css';
 import Home from './components/Home/Home';
+import Test from './components/Test/Test';
+
 import { Router, Route, Routes } from "@solidjs/router";
 
 const root = document.getElementById('root');
@@ -18,6 +20,7 @@ render(
 		<Router>
 			<Routes>
 				<Route path="/" component={Home} />
+				<Route path="/duck" component={Test} />
 			</Routes>
 		</Router>
 	),

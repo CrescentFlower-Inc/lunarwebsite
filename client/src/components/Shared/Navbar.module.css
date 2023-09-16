@@ -14,7 +14,7 @@
 	background-color: #00359F;
 }
 
-.NavbarElement {
+.NavbarElement, .NavbarElementSelected {
 	display: block;
 	padding-bottom: 9px;
 	padding-left: 18px;
@@ -27,4 +27,11 @@
 	background-color: #009F35;
 }
 
+.NavbarElementSelected {
+	background-color: #009F35;
+}
 
+.NavbarElement a, .NavbarElementSelected a {
+	text-decoration: none;
+	color: #fff;
+}

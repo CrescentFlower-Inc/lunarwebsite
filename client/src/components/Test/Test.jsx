@@ -1,13 +1,13 @@
 import styles from '../Shared/App.module.css';
 import Navbar from "../Shared/Navbar";
 
-function Home() {
+function Test() {
   return (
 	<div class={styles.App}>
 		<Navbar />
-		<h2>Welcome to The Lunarian Federation</h2>
+		<h2>i quack...</h2>
  	</div>
   );
 }
 
-export default Home;
+export default Test;
