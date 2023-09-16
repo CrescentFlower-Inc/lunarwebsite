@@ -4,7 +4,7 @@ function NavbarElement(props) {
 	if (props.buffer) {
 		return (
 			<span class={styles.NavbarElementBuffer}>
-				nig
+				DUCK
 			</span>
 		)
 	}
