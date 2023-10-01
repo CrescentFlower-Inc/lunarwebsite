@@ -1,1 +1,5 @@
+# Datbase
 server/database/*
+
+# Python stuff
+server/lunarwebsite/__pycache__

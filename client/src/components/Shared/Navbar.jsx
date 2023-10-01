@@ -6,7 +6,8 @@ function NavbarElement(props) {
 		<A class={styles.NavbarElement}
 			activeClass={styles.NavbarElementSelected}
 			href={props.path}
-			end={true}>{props.name}</A>
+			end={true}>{props.name}
+		</A>
 	);
 }
 
@@ -20,7 +21,7 @@ function Navbar() {
 			<NavbarElement name="Home" path="/" />
 			<NavbarElement name="Test page" path="/duck" />
 			<NavbarSpace />
-			<NavbarElement name="Account" path="/account" />
+			<NavbarElement name="Account" path="/register" />
 		</div>
 	);
 }
