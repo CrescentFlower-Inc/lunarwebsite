@@ -21,7 +21,7 @@ function Navbar() {
 			<NavbarElement name="Home" path="/" />
 			<NavbarElement name="Test page" path="/duck" />
 			<NavbarSpace />
-			<NavbarElement name="Account" path="/duck" />
+			<NavbarElement name="Account" path="/register" />
 		</div>
 	);
 }

@@ -1,53 +1,29 @@
-import styles from './Forms.module.css';
+import styles from '../Shared/Forms.module.css';
+import TextInput from '../Shared/TextInput';
 import { splitProps } from "solid-js";
-import { createForm, required } from '@modular-forms/solid';
 
-function TextInput(props) {
-	const [, inputProps] = splitProps(props, ["label"])
-
-	return (
-		<div class={styles.TextInput}>
-			<label>{props.label}</label>
-			<input {...inputProps}/>
-			<p/>
-		</div>
-	)
-}
 
 function Register () {
-	const [loginForm, { Form, Field }] = createForm();
+	const handleSubmit = (e) => {
+		alert("DUCK!!")
+	}
 
-	const handleSubmit = async (values,event) => {
-		let obj = {}
-		obj.username = values.username
-		obj.email = values.email
-		obj.password = values.password
-		const req = fetch("/api/account/register", {method: "POST", body: JSON.stringify(obj)});
-		alert(req.json());
-	};
 
 	return <>
 		<h2>Registration</h2>
 
-		<Form onSubmit={handleSubmit} class={styles.Form}>
-			<Field name="username">
-				<TextInput label="Username" placeholder="Enter in your username"/>
-			</Field>
+		<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+		<form class={styles.Form} target="dummyframe">
+			<TextInput label="Username" placeholder="Enter in your username"/>
 
-			<Field name="email">
-				<TextInput label="Email" placeholder="Enter in your email here"/>
-			</Field>
+			<TextInput label="Email" placeholder="Enter in your email here"/>
 
-			<Field name="password">
-				<TextInput label="Password" placeholder="Enter in your password"/>
-			</Field>
+			<TextInput label="Password" placeholder="Enter in your password"/>
 
-			<Field name="confirmation">
-				<TextInput label="Confirm Password" placeholder="Retype your password"/>
-			</Field>
+			<TextInput label="Confirm Password" placeholder="Retype your password"/>
 
-			<button type="submit">Register!</button>
-		</Form>
+			<button onclick={handleSubmit}>Register!</button>
+		</form>
 	</>;
 }
 
