@@ -8,7 +8,7 @@ import Home from './components/Home/Home';
 import Test from './components/Test/Test';
 
 import Register from './components/Account/Register';
-import Account from './components/Account/Account';
+//import Account from './components/Account/Account';
 
 import { Router, Route, Routes } from "@solidjs/router";
 
