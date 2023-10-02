@@ -6,8 +6,29 @@ import { splitProps, createSignal } from "solid-js";
 function Register () {
 	let [form, setForm] = createSignal({"username": "", "email": "", "password": "", "confirm": ""})
 
-	const handleSubmit = (e) => {
-		console.log(form());
+	const handleSubmit = async (e) => {
+		let inputs = form();
+		if (inputs.username===""||inputs.password===""||inputs.confirm===""||inputs.email==="") {
+			alert("Please fill in all fields")
+			return;
+		}
+
+		if (inputs.confirm !== inputs.password) {
+			alert("Passwords don't match!");
+			return;
+		}
+		let resp = await fetch("/api/account/register", {
+			method: "POST",
+			body: JSON.stringify({"username": inputs.username, "email": inputs.email, "password": inputs.password})
+		})
+
+		if (resp.status !== 200) {
+			alert('Ooops! Something went wrong!');
+			return;
+		}
+
+		alert("Registration successful!")
+		console.log(resp.json());
 	}
 
 
