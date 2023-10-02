@@ -22,6 +22,11 @@ function Register () {
 			body: JSON.stringify({"username": inputs.username, "email": inputs.email, "password": inputs.password})
 		})
 
+		if (resp.status == 400) {
+			let respj = await resp.json();
+			alert(respj.error);
+			return;
+		}
 		if (resp.status !== 200) {
 			alert('Ooops! Something went wrong!');
 			return;

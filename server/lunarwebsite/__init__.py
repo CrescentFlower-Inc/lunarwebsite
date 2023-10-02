@@ -1,4 +1,4 @@
-from lunarwebsite.accounts import app as accountsapp
+from lunarwebsite.account import app as accountsapp
 from lunarwebsite.ormsettings import TORTOISE_ORM
 
 from fastapi import FastAPI
@@ -24,6 +24,7 @@ app.mount("/assets/", StaticFiles(directory=str(assetsfolder)), name="static")
 
 @app.get("/{duck}", response_class=HTMLResponse)
 async def almost_true_root(duck):
+	print(duck)
 	with open(index) as f:
 		return f.read()
 
@@ -34,8 +35,6 @@ async def true_root():
 
 register_tortoise(
 	app,
-	db_url=TORTOISE_ORM["connections"]["default"],
-	modules=TORTOISE_ORM["apps"]["models"],
-	generate_schemas=True,
-	add_exception_handlers=True,
+	config=TORTOISE_ORM,
+	generate_schemas=True
 )
