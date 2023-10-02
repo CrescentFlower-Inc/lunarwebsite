@@ -7,9 +7,17 @@ function Register () {
 	let [form, setForm] = createSignal({"username": "", "email": "", "password": "", "confirm": ""})
 
 	const handleSubmit = async (e) => {
+		const emailreg = /[\w\.]+@\w+\.\w+/g;
 		let inputs = form();
+
+
 		if (inputs.username===""||inputs.password===""||inputs.confirm===""||inputs.email==="") {
 			alert("Please fill in all fields")
+			return;
+		}
+
+		if (!emailreg.test(inputs.email)) {
+			alert("Enter in a valid email address!")
 			return;
 		}
 
@@ -45,11 +53,11 @@ function Register () {
 		<form class={styles.Form} target="dummyframe">
 			<TextInput label="Username" placeholder="Enter in your username" signal={form} setSignal={setForm} name="username" />
 
-			<TextInput label="Email" placeholder="Enter in your email here" signal={form} setSignal={setForm} name="email" />
+			<TextInput type="email" label="Email" placeholder="Enter in your email here" signal={form} setSignal={setForm} name="email" />
 
-			<TextInput label="Password" placeholder="Enter in your password" signal={form} setSignal={setForm} name="password" />
+			<TextInput type="password" label="Password" placeholder="Enter in your password" signal={form} setSignal={setForm} name="password" />
 
-			<TextInput label="Confirm Password" placeholder="Retype your password" signal={form} setSignal={setForm} name="confirm" />
+			<TextInput type="password" label="Confirm Password" placeholder="Retype your password" signal={form} setSignal={setForm} name="confirm" />
 
 			<button onclick={handleSubmit}>Register!</button>
 		</form>
