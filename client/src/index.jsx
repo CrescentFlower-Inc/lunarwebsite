@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import Test from './components/Test/Test';
 
 import Register from './components/Account/Register';
+import Login from './components/Account/Login';
 //import Account from './components/Account/Account';
 
 import { Router, Route, Routes } from "@solidjs/router";
@@ -29,6 +30,7 @@ render(
 					<Route path="/" component={Home} />
 					<Route path="/duck" component={Test} />
 					<Route path="/register" component={Register} />
+					<Route path="/login" component={Login} />
 				</Routes>
 			</div>
 		</Router>
