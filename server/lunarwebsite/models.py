@@ -1,6 +1,12 @@
 from tortoise import fields, models
 from hashlib import sha256
 
+class Sessions(models.Model):
+	id = fields.IntField(pk=True)
+
+	user = fields.ForeignKey("models.User")
+	token = fields.CharField(max_l
+
 class User(models.Model):
 	id = fields.IntField(pk=True) # Account ID
 
