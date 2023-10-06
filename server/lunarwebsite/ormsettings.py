@@ -4,7 +4,7 @@ TORTOISE_ORM = {
     "connections": {"default": "sqlite://database/db.sqlite3"},
     "apps": {
         "models": {
-            "models": ["lunarwebsite.models", "aerich.models"],
+            "models": ["lunarwebsite.models"],
             "default_connection": "default",
         },
     },

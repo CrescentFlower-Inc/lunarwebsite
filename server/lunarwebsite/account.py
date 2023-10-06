@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, Response
 from pydantic import BaseModel
 from hashlib import sha256
+from random import randbytes
 from lunarwebsite.models import User
 
 app = FastAPI()
@@ -23,4 +24,24 @@ async def register(request: Request, response: Response):
 
 @app.post("/login")
 async def login(request: Request, response: Response):
-	return {"nig": True}
+	data = await request.json()
+
+	if data["mode"]:
+		user = await User.filter(email=data["username"])
+	else:
+		user = await User.filter(username=data["username"])
+
+	if len(user) == 0:
+		response.status_code = 401
+		return {"successful": False, "error": "Username/Email not found!"}
+
+	user = user[0]
+	hash = sha256(data["password"].encode('utf-8')).hexdigest()
+
+	if not hash == User.password:
+		response.status_code = 401
+		return {"succesful": False, "error": "Incorrect password!"}
+
+	session = await Session.create(user=user, token=sha256(randbytes(32)).hexdigest())
+
+	return {"successful": True, "session": session.serialize()}

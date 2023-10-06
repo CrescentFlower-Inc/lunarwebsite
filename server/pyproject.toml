@@ -11,13 +11,7 @@ python = "^3.9"
 fastapi = "^0.103.1"
 uvicorn = {extras = ["standard"], version = "^0.23.2"}
 tortoise-orm = {extras = ["aiosqlite"], version = "^0.20.0"}
-aerich = "0.6.3"
 
-
-[tool.aerich]
-tortoise_orm = "lunarwebsite.ormsettings.TORTOISE_ORM"
-location = "./migrations"
-src_folder = "./."
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

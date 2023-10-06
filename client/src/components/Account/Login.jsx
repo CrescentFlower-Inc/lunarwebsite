@@ -23,7 +23,7 @@ function Login () {
 			body: JSON.stringify({"mode": mode, "username": inputs.username, "password": inputs.password})
 		})
 
-		if (resp.status == 400) {
+		if (resp.status == 401) {
 			let respj = await resp.json();
 			alert(respj.error);
 			return;
@@ -33,7 +33,6 @@ function Login () {
 			return;
 		}
 
-		console.log(resp.json());
 	}
 
 

@@ -41,7 +41,6 @@ function Register () {
 		}
 
 		alert("Registration successful!")
-		console.log(resp.json());
 	}
 
 

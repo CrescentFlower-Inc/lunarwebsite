@@ -1,5 +1,2 @@
-# Datbase
-server/database/*
-
-# Python stuff
-server/lunarwebsite/__pycache__
+# Database
+server/database/db.sqlite3

@@ -7,6 +7,10 @@ class Session(models.Model):
 	user = fields.ForeignKeyField("models.User")
 	token = fields.CharField(max_length=64, unique=True)
 
+	expires = fields.DatetimeField()
+
+	def serialize(self):
+		return {"token": token}
 
 class User(models.Model):
 	id = fields.IntField(pk=True) # Account ID
@@ -16,7 +20,7 @@ class User(models.Model):
 	password = fields.CharField(max_length=64, unique=True) # Hashed password
 
 	admin = fields.BooleanField()
-	created_at = fields.DatetimeField(auto_now=True)
+	created_at = fields.DatetimeField(auto_now_add=True)
 
 	def authenticate(self, passwd) -> bool:
 		if sha256(passwd.encode('utf-8')).hexdigest == self.password:
