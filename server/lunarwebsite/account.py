@@ -21,3 +21,6 @@ async def register(request: Request, response: Response):
 	user = await User.create(username=data["username"], password=data["password"], email=data["email"], admin=False)
 	return {"successful": True}
 
+@app.post("/login")
+async def login(request: Request, response: Response):
+	return {"nig": True}

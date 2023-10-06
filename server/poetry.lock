@@ -2,13 +2,13 @@
 
 [[package]]
 name = "aerich"
-version = "0.7.2"
+version = "0.6.3"
 description = "A database migrations tool for Tortoise ORM."
 optional = false
 python-versions = ">=3.7,<4.0"
 files = [
-    {file = "aerich-0.7.2-py3-none-any.whl", hash = "sha256:84c78c07d45436b89ca4db5411eca4e9292a591fb7d6fd4282fa4a7d0c6d2af1"},
-    {file = "aerich-0.7.2.tar.gz", hash = "sha256:31d67de7b96184636b89de99062e059e5e6204b6251d24c33eb21fc9cf982e09"},
+    {file = "aerich-0.6.3-py3-none-any.whl", hash = "sha256:d45f98214ed54b8ec9be949df264c5b0b9e8b79d8f8ba9e68714675bc81a5574"},
+    {file = "aerich-0.6.3.tar.gz", hash = "sha256:96ac087922048470687264125cb9dfeaade982219c78e6a9b91a0fb67eaa1cd1"},
 ]
 
 [package.dependencies]
@@ -19,7 +19,7 @@ tomlkit = "*"
 tortoise-orm = "*"
 
 [package.extras]
-asyncmy = ["asyncmy (>=0.2.8rc1,<0.3.0)"]
+asyncmy = ["asyncmy"]
 asyncpg = ["asyncpg"]
 
 [[package]]
@@ -67,17 +67,6 @@ sniffio = ">=1.1"
 doc = ["Sphinx", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme (>=1.2.2)", "sphinxcontrib-jquery"]
 test = ["anyio[trio]", "coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "mock (>=4)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
 trio = ["trio (<0.22)"]
-
-[[package]]
-name = "atlastk"
-version = "0.13.3"
-description = "World's lightest toolkit to quickly and easily add a GUI to your Python programs and bring them online."
-optional = false
-python-versions = "*"
-files = [
-    {file = "atlastk-0.13.3-py3-none-any.whl", hash = "sha256:7d1ac1c9bffb63e09a2e55eb8ab2795e0bf79252805c84493bf0e30bab6879a1"},
-    {file = "atlastk-0.13.3.tar.gz", hash = "sha256:17808075d5fbada776e8c2f7479fecb6373af9df33f23d7485556106cef871fc"},
-]
 
 [[package]]
 name = "click"
@@ -498,20 +487,6 @@ files = [
 ]
 
 [[package]]
-name = "tortoise"
-version = "0.1.1"
-description = "Turtle graphics on the web."
-optional = false
-python-versions = "*"
-files = [
-    {file = "tortoise-0.1.1-py3-none-any.whl", hash = "sha256:bcb58a56d6796cad0db330104450df2caf2ea9e98d844bb2906274bd15c12804"},
-    {file = "tortoise-0.1.1.tar.gz", hash = "sha256:a4ebd69b152d266174b3b0f2a22e3fb8995101eb749d3114813a98f405ab10bb"},
-]
-
-[package.dependencies]
-atlastk = "*"
-
-[[package]]
 name = "tortoise-orm"
 version = "0.20.0"
 description = "Easy async ORM for python, built with relations in mind"
@@ -733,4 +708,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "7ba526acb5795033a4d3d6b7ad66c4c944142e24dadc0dfe652213759adc1052"
+content-hash = "3e49d2d731fc68d12a6b9349381344eafd5cdee76106b1dc74dfc6f09694653e"
