@@ -16,7 +16,7 @@ function Login () {
 			return;
 		}
 
-		let mode = emailgreg.test(inputs.username)
+		let mode = emailreg.test(inputs.username)
 
 		let resp = await fetch("/api/account/login", {
 			method: "POST",
