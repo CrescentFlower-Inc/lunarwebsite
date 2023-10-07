@@ -10,7 +10,7 @@ class Session(models.Model):
 	expires = fields.DatetimeField()
 
 	def serialize(self):
-		return {"token": token}
+		return {"token": self.token}
 
 class User(models.Model):
 	id = fields.IntField(pk=True) # Account ID
