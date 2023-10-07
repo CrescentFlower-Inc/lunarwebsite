@@ -4,7 +4,7 @@ from hashlib import sha256
 from random import randbytes
 from datetime import datetime
 from time import time
-from lunarwebsite.models import User
+from lunarwebsite.models import User, Session
 
 app = FastAPI()
 
