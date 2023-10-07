@@ -1,7 +1,7 @@
 import styles from '../Shared/Forms.module.css';
 import TextInput from '../Shared/TextInput';
 import { splitProps, createSignal } from "solid-js";
-
+import { A } from "@solidjs/router";
 
 function Register () {
 	let [form, setForm] = createSignal({"username": "", "email": "", "password": "", "confirm": ""})
@@ -60,6 +60,7 @@ function Register () {
 
 			<button onclick={handleSubmit}>Register!</button>
 		</form>
+		<A href="/login"> Already have an account? </A>
 	</>;
 }
 

@@ -33,6 +33,8 @@ function Login () {
 			return;
 		}
 
+		alert("Login Successful!");
+
 	}
 
 
