@@ -4,6 +4,7 @@ from lunarwebsite.ormsettings import TORTOISE_ORM
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 
 from pathlib import Path
 from tortoise.contrib.fastapi import register_tortoise
@@ -13,6 +14,14 @@ assetsfolder = distfolder / "assets"
 index = distfolder / "index.html"
 
 app = FastAPI()
+
+app.add_middleware(
+	CORSMiddleware,
+	allow_origins=["*"],
+	allow_credentials=True,
+	allow_methods=["*"],
+	allow_headers=["*"]
+)
 
 app.mount("/api/account", accountsapp)
 

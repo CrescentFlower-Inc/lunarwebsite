@@ -17,7 +17,7 @@ class User(models.Model):
 
 	username = fields.CharField(max_length=32, unique=True) # Username
 	email = fields.CharField(max_length=50, unique=True) # Email
-	password = fields.CharField(max_length=64, unique=True) # Hashed password
+	password = fields.CharField(max_length=64) # Hashed password
 
 	admin = fields.BooleanField()
 	created_at = fields.DatetimeField(auto_now_add=True)
