@@ -6,13 +6,13 @@ This is used when developing the client and server at the same time.
 See the comments for more information.
 
 # Starting server
-You can start up the dev server with ```bash
+You can start up the dev server with ```
 $ npm run dev
 OR
 $ pnpm run dev
 ```
 
-You can compile for prod with ```bash
+You can compile for prod with ```
 $ npm run build
 OR
 $ pnpm run build
