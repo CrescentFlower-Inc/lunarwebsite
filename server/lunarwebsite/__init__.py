@@ -1,4 +1,4 @@
-from lunarwebsite.account import app as accountsapp
+from lunarwebsite.api.account import app as accountsapp
 from lunarwebsite.ormsettings import TORTOISE_ORM
 
 from fastapi import FastAPI

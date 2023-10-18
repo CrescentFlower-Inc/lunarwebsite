@@ -34,6 +34,7 @@ function Login () {
 			alert('Ooops! Something went wrong!');
 			return;
 		}
+		console.log(await resp.json())
 
 		alert("Login Successful!");
 	}
