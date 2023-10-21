@@ -14,7 +14,7 @@ class Session(models.Model):
 		days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 		months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-		expiry = self.expires.strftime(f"{ days[ self.expires.isoweekday()-1 ] }, %d { months[ self.expires.month-1 ] } %Y %H:%M:%S")
+		expiry = self.expires.strftime(f"{ days[ self.expires.isoweekday()-1 ] }, %d { months[ self.expires.month-1 ] } %Y %H:%M:%S UTC")
 
 		return {"token": self.token, "expires": expiry}
 

@@ -5,8 +5,14 @@ from random import randbytes
 from datetime import datetime
 from time import time
 from lunarwebsite.models import User, Session
+from lunarwebsite.utils import refresh_sessions
 
 app = FastAPI()
+
+@app.get("/test")
+async def refresh():
+	await refresh_sessions()
+	return {"balls": True}
 
 @app.post("/register")
 async def register(request: Request, response: Response):
@@ -21,7 +27,7 @@ async def register(request: Request, response: Response):
 		return {"succesful": False, "error": "Email already taken!"}
 
 	hash = sha256(data["password"].encode('utf-8')).hexdigest()
-	user = await User.create(username=data["username"], password=hash, email=data["email"], admin=False)
+	user = await User.create(username=data["username"], password=hash, email=data["email"], admin=False, banned=False)
 	return {"successful": True}
 
 @app.post("/login")
