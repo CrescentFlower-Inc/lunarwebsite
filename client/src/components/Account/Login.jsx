@@ -34,7 +34,9 @@ function Login () {
 			alert('Ooops! Something went wrong!');
 			return;
 		}
-		console.log(await resp.json())
+
+		let session = (await resp.json()).session
+		document.cookie = `token=${session.token}; expires=${session.expires}`;
 
 		alert("Login Successful!");
 	}

@@ -11,6 +11,14 @@ function NavbarElement(props) {
 	);
 }
 
+function NavbarDropdown(props) {
+	return (
+		<select name={props.name} class={`${styles.NavbarDropdown} ${styles.NavbarElement}`}>
+			{props.children}
+		</select>
+	)
+}
+
 function NavbarSpace(props) {
 	return <span class={styles.NavbarSpace}></span>
 }
@@ -21,7 +29,9 @@ function Navbar() {
 			<NavbarElement name="Home" path="/" />
 			<NavbarElement name="Test page" path="/duck" />
 			<NavbarSpace />
-			<NavbarElement name="Account" path="/account" />
+			<NavbarDropdown name="Account">
+				<option value="test"> Test </option>
+			</NavbarDropdown>
 		</div>
 	);
 }

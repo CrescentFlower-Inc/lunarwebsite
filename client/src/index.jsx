@@ -27,8 +27,11 @@ render(
 			<div class={styles.App}>
 				<Navbar/>
 				<Routes>
+					// Home stuff
 					<Route path="/" component={Home} />
 					<Route path="/duck" component={Test} />
+
+					// Account stuff
 					<Route path="/account" component={Account} />
 					<Route path="/register" component={Register} />
 					<Route path="/login" component={Login} />

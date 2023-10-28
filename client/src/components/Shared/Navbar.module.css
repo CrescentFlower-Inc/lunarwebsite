@@ -37,3 +37,12 @@
 	text-decoration: none;
 	color: #fff;
 }
+
+.NavbarDropdown {
+	border: 0px solid black;
+}
+
+.NavbarDropdown option {
+	border-radius: 0px;
+	color: #696969;
+}
