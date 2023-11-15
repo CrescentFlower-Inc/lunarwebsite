@@ -1,2 +1,6 @@
 # Database
 server/database/db.sqlite3
+
+# no clue what the fuck these two are
+server/database/db.sqlite3-shm
+server/database/db.sqlite3-wal

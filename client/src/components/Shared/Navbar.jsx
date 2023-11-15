@@ -1,4 +1,4 @@
-import { A } from "@solidjs/router";
+import { A, Navigate } from "@solidjs/router";
 import styles from "./Navbar.module.css";
 
 function NavbarElement(props) {
@@ -10,18 +10,10 @@ function NavbarElement(props) {
 		</A>
 	);
 }
-
-function NavbarDropdown(props) {
-	return (
-		<select name={props.name} class={`${styles.NavbarDropdown} ${styles.NavbarElement}`}>
-			{props.children}
-		</select>
-	)
-}
-
 function NavbarSpace(props) {
 	return <span class={styles.NavbarSpace}></span>
 }
+
 
 function Navbar() {
 	return (
@@ -29,9 +21,7 @@ function Navbar() {
 			<NavbarElement name="Home" path="/" />
 			<NavbarElement name="Test page" path="/duck" />
 			<NavbarSpace />
-			<NavbarDropdown name="Account">
-				<option value="test"> Test </option>
-			</NavbarDropdown>
+			<NavbarElement name="Account" path="/account"/>
 		</div>
 	);
 }
