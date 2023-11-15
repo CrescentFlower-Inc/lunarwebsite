@@ -12,6 +12,10 @@ fastapi = "^0.103.1"
 uvicorn = {extras = ["standard"], version = "^0.23.2"}
 tortoise-orm = {extras = ["aiosqlite"], version = "^0.20.0"}
 
+[tool.poetry.scripts]
+dev = "lunarwebsite:dev"
+prod = "lunarwebsite:prod"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

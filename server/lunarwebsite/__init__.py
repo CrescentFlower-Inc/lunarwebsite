@@ -9,6 +9,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pathlib import Path
 from tortoise.contrib.fastapi import register_tortoise
 
+import uvicorn
+
+HOST = "127.0.0.1"
+DEVPORT = 8000
+
+PRODPORT = 3000 # idk this lol
+
 distfolder = Path(__file__).parents[2] / "client/dist"
 assetsfolder = distfolder / "assets"
 index = distfolder / "index.html"
@@ -47,3 +54,10 @@ register_tortoise(
 	config=TORTOISE_ORM,
 	generate_schemas=True
 )
+
+
+def dev():
+	uvicorn.run("lunarwebsite:app", host=HOST, port=DEVPORT, reload=True)
+
+def prod():
+	uvicorn.run("lunarwebsite:app", host=HOST, port=PRODPORT)
