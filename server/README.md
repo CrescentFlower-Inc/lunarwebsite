@@ -12,11 +12,6 @@ First of all, install the packages:
 $ poetry install
 ```
 
-Enter a poetry shell:
-```bash
-$ poetry shell
-```
-
 You can start the production server with
 ```bash
 $ poetry run prod
