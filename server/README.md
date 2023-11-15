@@ -17,17 +17,18 @@ Enter a poetry shell:
 $ poetry shell
 ```
 
-You can start the uvicorn server like this for prod:
+You can start the production server with
 ```bash
-$ uvicorn lunarwebsite:app --host 0.0.0.0
+$ poetry run prod
 ```
 
 OR
 
-You can start the unicorn server like this for dev:
+You can start the dev server with:
 ```bash
-$ uvicorn lunarwebsite:app --host 0.0.0.0 --reload 
-# You dont have to host it outside local host if you dont want to
+$ poetry run dev
 ```
+
+Right now you can only configure these by changing the code in server/lunarwebsite/__init__.py
 
 The backend serves the files in client/dist.
